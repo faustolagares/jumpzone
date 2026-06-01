@@ -57,8 +57,9 @@
   .bio-link.primary { background:var(--energy-green); box-shadow:var(--shadow-glow-sm); }
   .bio-link.primary .inr { color:#0A0A0A; }
   .bio-link.primary:hover { background:var(--green-hover); }
-  .bio-link.secondary .brd { position:absolute; inset:0; background:var(--energy-green); clip-path:var(--clip-apex); }
+  .bio-link.secondary .brd { position:absolute; inset:0; background:#161616; clip-path:var(--clip-apex); transition:background .15s; }
   .bio-link.secondary .fil { position:absolute; inset:2px; background:#161616; clip-path:var(--clip-apex); transition:background .15s; }
+  .bio-link.secondary:hover .brd { background:#202020; }
   .bio-link.secondary:hover .fil { background:#202020; }
   .bio-link.secondary .lab { color:var(--energy-green); }
   .bio-link.secondary .inr span:first-child { color:var(--energy-green); }

@@ -44,8 +44,9 @@ body {
 .jbtn-primary:active { background: var(--green-active); }
 
 .jbtn-secondary { min-width: 180px; }
-.jbtn-secondary .brd { position:absolute; inset:0; background:var(--energy-green); clip-path:var(--clip-apex); }
+.jbtn-secondary .brd { position:absolute; inset:0; background:#161616; clip-path:var(--clip-apex); transition: background var(--dur-base); }
 .jbtn-secondary .fil { position:absolute; inset:2px; background:#161616; clip-path:var(--clip-apex); transition: background var(--dur-base); }
+.jbtn-secondary:hover .brd { background:#202020; }
 .jbtn-secondary:hover .fil { background:#202020; }
 .jbtn-secondary .lbl { color:var(--energy-green); }
 .jbtn-secondary .slash { color:rgba(168,255,0,0.55); }
