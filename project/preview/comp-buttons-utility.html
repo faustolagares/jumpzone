@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="_card.css">
+<style>
+  .lbl { font-family:var(--font-sans); font-weight:900; font-style:italic; text-transform:uppercase; font-size:13px; letter-spacing:0.05em; }
+  /* ghost — single hairline border via clip layers, kept thin (1px) and subtle */
+  .ghost { position:relative; display:inline-flex; align-items:center; gap:8px; padding:14px 24px; clip-path:var(--clip-apex); cursor:pointer; }
+  .ghost .border { position:absolute; inset:0; background:rgba(255,255,255,0.12); clip-path:var(--clip-apex); }
+  .ghost .fill { position:absolute; inset:1px; background:#0A0A0A; clip-path:var(--clip-apex); }
+  .ghost .lbl { position:relative; z-index:2; color:var(--fg2); }
+  /* text / link-style button — mono uppercase, green, animated underline + arrow */
+  .textbtn { display:inline-flex; align-items:center; gap:8px; white-space:nowrap; font-family:var(--font-mono); font-weight:700;
+    font-size:12px; text-transform:uppercase; letter-spacing:0.16em; color:var(--energy-green); cursor:pointer; padding:4px 0; }
+  .textbtn .txt { position:relative; }
+  .textbtn .txt::after { content:""; position:absolute; left:0; right:0; bottom:-4px; height:1.5px;
+    background:var(--energy-green); opacity:0.45; }
+  .textbtn svg { transition:transform .15s; }
+  /* icon buttons */
+  .iconbtn { position:relative; width:40px; height:40px; display:inline-flex; align-items:center; justify-content:center; clip-path:var(--clip-micro); cursor:pointer; }
+  .iconbtn.dark .border { position:absolute; inset:0; background:rgba(255,255,255,0.08); clip-path:var(--clip-micro); }
+  .iconbtn.dark .fill { position:absolute; inset:1px; background:rgba(255,255,255,0.06); clip-path:var(--clip-micro); }
+  .iconbtn.dark i { position:relative; z-index:2; color:var(--fg2); }
+  .iconbtn.green { background:var(--energy-green); }
+  .iconbtn.green i { color:#0A0A0A; }
+  .nm { font-family:var(--font-mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--fg3); }
+  .col2 { display:flex; flex-direction:column; gap:10px; align-items:flex-start; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="spec-label">Utility buttons — ghost · link-style · icon</div>
+  <div class="row" style="gap:26px;">
+    <div class="col2"><button class="ghost"><span class="border"></span><span class="fill"></span><span class="lbl">Ghost</span></button><span class="nm">ghost · 1px hairline</span></div>
+    <div class="col2"><button class="textbtn"><span class="txt">Learn More</span> <i data-lucide="arrow-right" style="width:13px;height:13px;"></i></button><span class="nm">link-style · mono + underline</span></div>
+    <div class="col2"><div class="row" style="gap:10px;">
+      <button class="iconbtn dark"><span class="border"></span><span class="fill"></span><i data-lucide="menu" style="width:18px;height:18px;"></i></button>
+      <button class="iconbtn green"><i data-lucide="play" style="width:18px;height:18px;"></i></button>
+    </div><span class="nm">icon · dark / green</span></div>
+  </div>
+</div>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>lucide.createIcons();</script>
+</body>
+</html>

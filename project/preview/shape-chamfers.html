@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="_card.css">
+<style>
+  .shape-wrap { position:relative; width:150px; height:84px; }
+  .border-layer { position:absolute; inset:0; background:rgba(255,255,255,0.12); }
+  .fill-layer { position:absolute; inset:1px; background:#121212; display:flex; align-items:center; justify-content:center; }
+  .sw { display:flex; flex-direction:column; gap:8px; }
+  .nm { font-family:var(--font-mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--fg3); }
+  .px { font-family:var(--font-mono); font-size:11px; color:var(--energy-green); }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="spec-label">Signature shape — chamfered clip-paths (never border-radius)</div>
+  <div class="row" style="gap:18px;">
+    <div class="sw">
+      <div class="shape-wrap">
+        <div class="border-layer" style="clip-path:var(--clip-apex);"></div>
+        <div class="fill-layer" style="clip-path:var(--clip-apex);"><span class="px">apex · 10px</span></div>
+      </div>
+      <span class="nm">TL + BR chamfer · buttons</span>
+    </div>
+    <div class="sw">
+      <div class="shape-wrap">
+        <div class="border-layer" style="clip-path:var(--clip-micro);"></div>
+        <div class="fill-layer" style="clip-path:var(--clip-micro);"><span class="px">micro · 6px</span></div>
+      </div>
+      <span class="nm">all-4 corners · chips/icons</span>
+    </div>
+    <div class="sw">
+      <div class="shape-wrap" style="width:172px;">
+        <div class="border-layer" style="clip-path:var(--clip-card);"></div>
+        <div class="fill-layer" style="clip-path:var(--clip-card);"><span class="px">card · 16–20px</span></div>
+      </div>
+      <span class="nm">large apex · panels/cards</span>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="_card.css">
+<style>
+  .jbtn { position:relative; min-width:200px; min-height:56px; display:inline-flex; align-items:center; cursor:pointer; clip-path:var(--clip-apex); }
+  .jbtn .inner { position:relative; z-index:2; display:flex; align-items:center; justify-content:space-between; width:100%; padding:0 26px; gap:14px; }
+  .slashes { font-weight:800; font-style:italic; font-size:14px; letter-spacing:-0.04em; }
+  .lbl { flex:1; text-align:center; font-family:var(--font-sans); font-weight:900; font-style:italic; text-transform:uppercase; font-size:14px; letter-spacing:0.05em; white-space:nowrap; }
+  /* primary */
+  .primary { background:var(--energy-green); box-shadow:var(--shadow-glow-md); }
+  .primary .lbl, .primary .slashes, .primary svg { color:#0A0A0A; }
+  .primary .slashes { color:rgba(10,10,10,0.3); }
+  /* secondary */
+  .secondary .border { position:absolute; inset:0; background:var(--energy-green); clip-path:var(--clip-apex); }
+  .secondary .fill { position:absolute; inset:2px; background:#161616; clip-path:var(--clip-apex); }
+  .secondary .lbl { color:var(--energy-green); }
+  .secondary .slashes { color:rgba(168,255,0,0.55); }
+  .secondary svg { color:var(--energy-green); }
+  .nm { font-family:var(--font-mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--fg3); }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="spec-label">Primary system button — JumpButton (// slashes · label · icon)</div>
+  <div class="row" style="gap:18px;">
+    <div class="col" style="gap:8px;">
+      <button class="jbtn primary"><span class="inner"><span class="slashes">//</span><span class="lbl">Book Your Jump</span><i data-lucide="arrow-right" style="width:16px;height:16px;stroke-width:3;"></i></span></button>
+      <span class="nm">primary · energy-green + glow</span>
+    </div>
+    <div class="col" style="gap:8px;">
+      <button class="jbtn secondary"><span class="border"></span><span class="fill"></span><span class="inner"><span class="slashes">//</span><span class="lbl">View Classes</span><i data-lucide="arrow-right" style="width:16px;height:16px;stroke-width:2.5;"></i></span></button>
+      <span class="nm">secondary · green outline + dark fill</span>
+    </div>
+  </div>
+</div>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>lucide.createIcons();</script>
+</body>
+</html>

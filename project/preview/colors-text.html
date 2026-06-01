@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="_card.css">
+<style>
+  .sw { display:flex; flex-direction:column; gap:8px; }
+  .chip { width:128px; height:64px; border-radius:2px; display:flex; align-items:center; justify-content:center; border:1px solid var(--line-soft); }
+  .nm { font-family:var(--font-mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--fg3); }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="spec-label">Text ramp — on dark, and the flip to near-black on green</div>
+  <div class="row" style="gap:12px;">
+    <div class="sw"><div class="chip" style="background:#0A0A0A;"><span style="color:#FFFFFF;font-weight:700;font-size:18px;">Aa</span><span style="color:#FFFFFF;margin-left:8px;font-family:var(--font-mono);font-size:11px;">#FFFFFF</span></div><span class="nm">fg1 · primary</span></div>
+    <div class="sw"><div class="chip" style="background:#0A0A0A;"><span style="color:#CCCCCC;font-weight:700;font-size:18px;">Aa</span><span style="color:#CCCCCC;margin-left:8px;font-family:var(--font-mono);font-size:11px;">#CCCCCC</span></div><span class="nm">fg2 · steel-gray</span></div>
+    <div class="sw"><div class="chip" style="background:#0A0A0A;"><span style="color:#888888;font-weight:700;font-size:18px;">Aa</span><span style="color:#888888;margin-left:8px;font-family:var(--font-mono);font-size:11px;">#888888</span></div><span class="nm">fg3 · cool-gray</span></div>
+    <div class="sw"><div class="chip" style="background:#A8FF00;"><span style="color:#0A0A0A;font-weight:900;font-style:italic;font-size:18px;">Aa</span><span style="color:#0A0A0A;margin-left:8px;font-family:var(--font-mono);font-size:11px;">#0A0A0A</span></div><span class="nm">fg-on-green</span></div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="_card.css">
+<style>
+  .price-card { position:relative; width:240px; }
+  .price-card .border { position:absolute; inset:0; background:var(--energy-green); clip-path:var(--clip-card); box-shadow:var(--shadow-glow-md); }
+  .price-card .fill { position:absolute; inset:1px; background:#0A0A0A; clip-path:var(--clip-card); }
+  .price-card .body { position:relative; z-index:2; padding:26px 22px; display:flex; flex-direction:column; align-items:center; text-align:center; gap:8px; }
+  .tab { position:absolute; top:0; left:50%; transform:translateX(-50%); z-index:3; background:var(--energy-green); color:#000; font-family:var(--font-sans); font-weight:900; font-size:8px; letter-spacing:0.14em; text-transform:uppercase; padding:4px 12px; border-radius:0 0 5px 5px; }
+  .pname { font-family:var(--font-mono); font-weight:700; font-size:11px; letter-spacing:0.2em; color:var(--fg3); text-transform:uppercase; }
+  .pprice { font-family:var(--font-display); font-weight:700; font-style:italic; font-size:54px; line-height:1; color:#fff; transform:skewX(-6deg); }
+  .per { font-family:var(--font-mono); font-weight:700; font-size:11px; color:var(--energy-green); text-transform:uppercase; }
+  .psub { font-family:var(--font-sans); font-weight:900; font-size:13px; letter-spacing:0.08em; text-transform:uppercase; color:#fff; }
+  .feat { display:flex; align-items:center; gap:8px; font-family:var(--font-sans); font-size:12px; color:var(--fg2); }
+  .divider { width:36px; height:1.5px; background:rgba(168,255,0,0.25); border-radius:9999px; margin:6px 0; }
+</style>
+</head>
+<body>
+<div class="card" style="align-items:flex-start;">
+  <div class="spec-label">Pricing card — "most popular" (green border + glow)</div>
+  <div class="price-card">
+    <span class="tab">Most Popular</span>
+    <span class="border"></span><span class="fill"></span>
+    <div class="body">
+      <i data-lucide="users" style="width:26px;height:26px;color:var(--energy-green);stroke-width:1.5;"></i>
+      <div class="pname">Unlimited</div>
+      <div style="display:flex;align-items:baseline;gap:4px;"><span class="pprice">$129</span><span class="per">/mo</span></div>
+      <div class="psub">Unlimited Classes</div>
+      <div class="divider"></div>
+      <div class="feat"><i data-lucide="check" style="width:14px;height:14px;color:var(--energy-green);stroke-width:2.5;"></i> Priority booking</div>
+      <div class="feat"><i data-lucide="check" style="width:14px;height:14px;color:var(--energy-green);stroke-width:2.5;"></i> Bring a friend 2×/mo</div>
+    </div>
+  </div>
+</div>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>lucide.createIcons();</script>
+</body>
+</html>

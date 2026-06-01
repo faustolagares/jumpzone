@@ -1,0 +1,44 @@
+/* Shared styling for Design System preview cards (~700px wide) */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Teko:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap");
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+  background: var(--page-black);
+  color: var(--fg1);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+.card {
+  width: 100%;
+  min-height: 100%;
+  padding: 28px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 18px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* faint dotted techno grid used across the brand */
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, #A8FF00 1px, transparent 1px);
+  background-size: 24px 24px;
+  opacity: 0.025;
+  pointer-events: none;
+}
+
+.row { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.col { display: flex; flex-direction: column; gap: 6px; }
+.spec-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--fg3);
+}

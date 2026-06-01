@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="_card.css">
+<style>
+  .nm { font-family:var(--font-mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--fg3); }
+  .field { position:relative; width:260px; }
+  .field .border { position:absolute; inset:0; background:rgba(255,255,255,0.10); clip-path:var(--clip-apex); }
+  .field .fill { position:absolute; inset:1px; background:#0E0E0E; clip-path:var(--clip-apex); }
+  .field input { position:relative; z-index:2; width:100%; background:transparent; border:0; outline:0; padding:14px 16px; color:#fff; font-family:var(--font-sans); font-size:14px; }
+  .field input::placeholder { color:var(--fg3); }
+  .field.focus .border { background:var(--energy-green); }
+  /* language toggle */
+  .lang { display:inline-flex; align-items:center; background:rgba(255,255,255,0.04); padding:3px; border-radius:9999px; border:1px solid rgba(255,255,255,0.06); gap:2px; }
+  .lang .globe { padding:0 4px 0 8px; color:var(--fg3); display:flex; }
+  .lang button { font-family:var(--font-mono); font-weight:700; font-size:10px; padding:4px 8px; border-radius:9999px; border:0; cursor:pointer; background:transparent; color:var(--fg3); }
+  .lang button.on { background:var(--energy-green); color:#0A0A0A; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="spec-label">Form input &amp; language toggle</div>
+  <div class="row" style="gap:18px;align-items:flex-end;">
+    <div class="col" style="gap:8px;">
+      <div class="field focus"><span class="border"></span><span class="fill"></span><input value="alex@jumpzone.com" /></div>
+      <span class="nm">text field · focused (green border)</span>
+    </div>
+    <div class="col" style="gap:8px;">
+      <div class="field"><span class="border"></span><span class="fill"></span><input placeholder="Your full name" /></div>
+      <span class="nm">text field · rest</span>
+    </div>
+  </div>
+  <div class="col" style="gap:8px;">
+    <div class="lang"><span class="globe"><i data-lucide="globe" style="width:14px;height:14px;"></i></span><button class="on">EN</button><button>PT</button><button>ES</button></div>
+    <span class="nm">language switcher · pill (the only pill in the system)</span>
+  </div>
+</div>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>lucide.createIcons();</script>
+</body>
+</html>

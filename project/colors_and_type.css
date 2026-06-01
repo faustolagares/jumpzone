@@ -1,0 +1,176 @@
+/* ============================================================================
+   JUMP ZONE STUDIO — Color & Type Foundations
+   Trampoline fitness concept, Newark NJ. Dark, concert-style, neon-green energy.
+   Source of truth: faustolagares/jumpzonestudio (src/index.css @theme block)
+   Fonts are genuine Google Fonts — load via the <link> shown at the bottom.
+   ============================================================================ */
+
+/* ----- Webfont loading (Google Fonts) --------------------------------------
+   Inter (body/UI), Teko (display headlines), JetBrains Mono (labels/code).
+   Add this to <head> of any page using the system:
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link rel="stylesheet"
+     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Teko:wght@500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+   --------------------------------------------------------------------------- */
+
+:root {
+  /* ===== BRAND COLORS ===================================================== */
+  --energy-green: #A8FF00;   /* primary — CTAs, accents, neon glow            */
+  --lime-accent:  #C6FF33;   /* lighter green — secondary accents             */
+  --neon-yellow:  #F5FF00;   /* hot highlight — sparing use                   */
+  --green-hover:  #B5FF1A;   /* primary button hover                          */
+  --green-active: #92DF00;   /* primary button pressed                        */
+
+  /* ===== NEUTRALS / SURFACES ============================================= */
+  --page-black:     #050505; /* body background (true app surface)            */
+  --deep-black:     #0A0A0A; /* card / panel base                             */
+  --dark-charcoal:  #121212; /* hovered card surface                          */
+  --card-black:     #1A1A1A; /* raised card                                   */
+  --line-soft:      rgba(255,255,255,0.06);  /* hairline borders              */
+  --line-strong:    rgba(255,255,255,0.10);  /* chamfer border layer          */
+
+  /* ===== TEXT ============================================================= */
+  --fg1: #FFFFFF;            /* primary text                                  */
+  --fg2: #CCCCCC;            /* steel-gray — secondary text                   */
+  --fg3: #888888;            /* cool-gray — muted / captions                  */
+  --fg-on-green: #0A0A0A;    /* text on green surfaces (always near-black)    */
+
+  /* ===== TYPEFACES ======================================================== */
+  --font-display: "Teko", Arial, sans-serif;            /* condensed display  */
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif; /* body/UI     */
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;     /* labels/code */
+
+  /* ===== MOTION =========================================================== */
+  --ease-out-strong:    cubic-bezier(0.23, 1, 0.32, 1);   /* default reveal   */
+  --ease-in-out-strong: cubic-bezier(0.77, 0, 0.175, 1);  /* emphatic         */
+  --ease-drawer:        cubic-bezier(0.32, 0.72, 0, 1);   /* sheets/drawers   */
+  --dur-press: 120ms;       /* active/scale feedback                          */
+  --dur-base:  150ms;       /* color/hover transitions                        */
+  --dur-reveal: 420ms;      /* entrance animations                            */
+
+  /* ===== GLOW / SHADOW ==================================================== */
+  --shadow-glow-sm: 0 0 20px rgba(168, 255, 0, 0.08);
+  --shadow-glow-md: 0 0 40px rgba(168, 255, 0, 0.12);
+  --shadow-glow-lg: 0 0 60px rgba(168, 255, 0, 0.16);
+  --shadow-card:    0 0 80px rgba(0, 0, 0, 0.55);
+  --text-glow-green: 0 0 6px rgba(168, 255, 0, 0.2);
+
+  /* ===== SHAPE — signature chamfered clip-paths ========================== */
+  /* Primary "apex" cut: top-left + bottom-right 10px chamfer (asymmetric)    */
+  --clip-apex: polygon(10px 0%, 100% 0%, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0% 100%, 0% 10px);
+  /* Micro: 6px chamfer all four corners (icons, chips)                       */
+  --clip-micro: polygon(6px 0%, calc(100% - 6px) 0%, 100% 6px, 100% calc(100% - 6px), calc(100% - 6px) 100%, 6px 100%, 0% calc(100% - 6px), 0% 6px);
+  /* Card: 16–20px apex cut for large panels                                  */
+  --clip-card: polygon(16px 0%, 100% 0%, 100% calc(100% - 16px), calc(100% - 16px) 100%, 0% 100%, 0% 16px);
+
+  --radius-pill: 9999px;    /* language toggle, status dots only              */
+}
+
+/* ============================================================================
+   SEMANTIC TYPE STYLES
+   Display = Teko (condensed, heavy, italic, skewed). Body = Inter.
+   Labels/meta = JetBrains Mono uppercase, wide tracking, often "///" prefix.
+   ============================================================================ */
+
+.jz-display-xl {            /* hero headline */
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(4rem, 9vw, 8rem);
+  line-height: 0.85;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  font-style: italic;
+  transform: skewX(-3deg);
+  color: var(--fg1);
+}
+
+.jz-display-lg {            /* section headline */
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: 0.9;
+  text-transform: uppercase;
+  font-style: italic;
+  transform: skewX(-6deg);
+  color: var(--fg1);
+}
+
+.jz-display-md {            /* card title / stat */
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  line-height: 1;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  font-style: italic;
+  color: var(--fg1);
+}
+
+.jz-display-sm {            /* feature label (Teko medium, not italic) */
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.125rem;
+  line-height: 1.1;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--fg1);
+}
+
+.jz-body-lg {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--fg2);
+}
+
+.jz-body {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--fg2);
+}
+
+.jz-body-sm {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--fg3);
+}
+
+.jz-button-label {          /* the core CTA label style */
+  font-family: var(--font-sans);
+  font-weight: 900;
+  font-style: italic;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.jz-eyebrow {               /* "/// MEMBERSHIPS" mono kicker */
+  font-family: var(--font-mono);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  color: var(--energy-green);
+}
+
+.jz-meta {                  /* small mono meta / status */
+  font-family: var(--font-mono);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.625rem;
+  letter-spacing: 0.16em;
+  color: var(--fg3);
+}
+
+/* ===== UTILITY ============================================================ */
+.jz-glow-green { text-shadow: var(--text-glow-green); }
+.jz-box-glow   { box-shadow: 0 0 10px rgba(168,255,0,0.15); }
+::selection    { background: var(--energy-green); color: var(--deep-black); }

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="_card.css">
+<style>
+  .sw { display:flex; flex-direction:column; gap:10px; align-items:center; }
+  .glow { width:120px; height:64px; background:#0F0F0F; border:1px solid var(--line-soft); }
+  .nm { font-family:var(--font-mono); font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:var(--fg3); }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="spec-label">Elevation is green glow — not drop shadow</div>
+  <div class="row" style="gap:26px;padding:14px 0;">
+    <div class="sw"><div class="glow" style="box-shadow:var(--shadow-glow-sm);"></div><span class="nm">glow-sm · 0 0 20px / .08</span></div>
+    <div class="sw"><div class="glow" style="box-shadow:var(--shadow-glow-md);"></div><span class="nm">glow-md · 0 0 40px / .12</span></div>
+    <div class="sw"><div class="glow" style="box-shadow:var(--shadow-glow-lg);"></div><span class="nm">glow-lg · 0 0 60px / .16</span></div>
+    <div class="sw"><div class="glow" style="display:flex;align-items:center;justify-content:center;"><span style="font-family:var(--font-display);font-style:italic;font-weight:700;font-size:26px;color:var(--energy-green);text-shadow:0 0 8px rgba(168,255,0,0.5);">JUMP</span></div><span class="nm">text-glow-green</span></div>
+  </div>
+</div>
+</body>
+</html>

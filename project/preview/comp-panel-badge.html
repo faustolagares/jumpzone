@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="_card.css">
+<style>
+  .nm { font-family:var(--font-mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--fg3); }
+  /* chamfered glass panel with feature item */
+  .panel { position:relative; width:300px; }
+  .panel .border { position:absolute; inset:0; background:rgba(255,255,255,0.10); clip-path:var(--clip-card); }
+  .panel .fill { position:absolute; inset:1px; background:rgba(0,0,0,0.45); backdrop-filter:blur(8px); clip-path:var(--clip-card); }
+  .panel .body { position:relative; z-index:2; padding:20px; display:flex; gap:14px; align-items:flex-start; }
+  .feat-t { font-family:var(--font-display); font-weight:500; font-size:18px; letter-spacing:0.04em; text-transform:uppercase; color:#fff; line-height:1; }
+  .feat-d { font-family:var(--font-sans); font-size:11px; color:var(--fg2); margin-top:5px; line-height:1.4; }
+  /* badge / chip */
+  .tab { background:var(--energy-green); color:#000; font-family:var(--font-sans); font-weight:900; font-size:9px; letter-spacing:0.14em; text-transform:uppercase; padding:5px 14px; border-radius:0 0 5px 5px; }
+  .status { display:inline-flex; align-items:center; gap:7px; font-family:var(--font-mono); font-size:11px; color:var(--fg3); }
+  .dot { width:6px; height:6px; border-radius:9999px; background:var(--energy-green); box-shadow:0 0 6px rgba(168,255,0,0.6); animation:p 1.6s infinite; }
+  @keyframes p { 50%{opacity:0.35;} }
+</style>
+</head>
+<body>
+<div class="card" style="flex-direction:row;align-items:center;gap:28px;flex-wrap:wrap;">
+  <div class="col" style="gap:8px;">
+    <div class="spec-label">Glass panel + feature item</div>
+    <div class="panel">
+      <span class="border"></span><span class="fill"></span>
+      <div class="body">
+        <i data-lucide="zap" style="width:26px;height:26px;color:var(--energy-green);"></i>
+        <div><div class="feat-t">High Energy</div><div class="feat-d">Cardio, strength &amp; music-driven workouts.</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="col" style="gap:14px;">
+    <div class="col" style="gap:8px;"><div class="spec-label">Badge</div><div class="tab">Most Popular</div></div>
+    <div class="col" style="gap:8px;"><div class="spec-label">Status</div>
+      <div class="row" style="gap:16px;"><span class="status"><span class="dot"></span>Secure SSL</span><span class="status"><span class="dot"></span>Flexible</span></div>
+    </div>
+  </div>
+</div>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>lucide.createIcons();</script>
+</body>
+</html>

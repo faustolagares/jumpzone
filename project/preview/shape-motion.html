@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="_card.css">
+<style>
+  .track { width:150px; height:6px; background:rgba(255,255,255,0.08); border-radius:9999px; position:relative; overflow:hidden; }
+  .ball { position:absolute; top:-5px; left:0; width:16px; height:16px; border-radius:9999px; background:var(--energy-green); box-shadow:var(--shadow-glow-sm); }
+  .e1 .ball { animation:run 2.4s var(--ease-out-strong) infinite; }
+  .e2 .ball { animation:run 2.4s var(--ease-in-out-strong) infinite; }
+  .e3 .ball { animation:run 2.4s var(--ease-drawer) infinite; }
+  @keyframes run { 0%{left:0;} 50%{left:calc(100% - 16px);} 100%{left:0;} }
+  .sw { display:flex; flex-direction:column; gap:10px; }
+  .nm { font-family:var(--font-mono); font-size:10px; letter-spacing:0.06em; text-transform:uppercase; color:var(--fg3); }
+  .val { font-family:var(--font-mono); font-size:10px; color:var(--energy-green); }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="spec-label">Motion — strong custom easings, reduced-motion aware</div>
+  <div class="row" style="gap:30px;padding:10px 0;">
+    <div class="sw e1"><div class="track"><div class="ball"></div></div><span class="nm">ease-out-strong</span><span class="val">.23, 1, .32, 1</span></div>
+    <div class="sw e2"><div class="track"><div class="ball"></div></div><span class="nm">ease-in-out-strong</span><span class="val">.77, 0, .175, 1</span></div>
+    <div class="sw e3"><div class="track"><div class="ball"></div></div><span class="nm">ease-drawer</span><span class="val">.32, .72, 0, 1</span></div>
+  </div>
+</div>
+</body>
+</html>
