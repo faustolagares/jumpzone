@@ -62,7 +62,7 @@ function Bio() {
       </section>
 
       <section className="bio-body">
-        <img className="bio-logo" src="../assets/logo-jumpzone.png" alt="Jump Zone Studio" />
+        <img className="bio-logo" src="/assets/logo-jumpzone.png" alt="Jump Zone Studio" />
         <p className="bio-sub">{C.sub}</p>
         <div className="bio-socials">
           {[["instagram", "Instagram"], ["tiktok", "TikTok"], ["facebook", "Facebook"], ["youtube", "YouTube"]].map(([s, l], i) => (
