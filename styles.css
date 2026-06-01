@@ -48,10 +48,10 @@ body {
 .jbtn-secondary .fil { position:absolute; inset:2px; background:#161616; clip-path:var(--clip-apex); transition: background var(--dur-base); }
 .jbtn-secondary:hover .brd { background:#202020; }
 .jbtn-secondary:hover .fil { background:#202020; }
-.jbtn-secondary .lbl { color:var(--energy-green); }
-.jbtn-secondary .slash { color:rgba(168,255,0,0.55); }
-.jbtn-secondary .ic { color:var(--energy-green); transition: color var(--dur-base); }
-.jbtn-secondary:hover .ic { color:var(--green-hover); }
+.jbtn-secondary .lbl { color:#fff; }
+.jbtn-secondary .slash { color:rgba(255,255,255,0.55); }
+.jbtn-secondary .ic { color:#fff; transition: color var(--dur-base); }
+.jbtn-secondary:hover .ic { color:#fff; }
 
 /* header button (compact) */
 .hbtn { position:relative; min-width:150px; padding:10px 20px; clip-path:var(--clip-apex);
