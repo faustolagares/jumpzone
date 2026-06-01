@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jump Zone Studio — Bio Link Page</title>
+<link rel="icon" type="image/png" href="../assets/favicon-32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Teko:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:#000; font-family:var(--font-sans); -webkit-font-smoothing:antialiased; min-height:100vh;
+    display:flex; justify-content:center; }
+  @keyframes rise { from { opacity:0; transform:translateY(14px); } to { opacity:1; transform:none; } }
+  @keyframes cover { from { opacity:0; transform:scale(1.04); } to { opacity:1; transform:none; } }
+
+  .bio-frame { width:100%; max-width:430px; min-height:100vh; background:var(--page-black);
+    box-shadow:0 0 80px rgba(0,0,0,0.55); }
+
+  .bio-cover { position:relative; height:238px; overflow:hidden; animation:cover .62s var(--ease-out-strong) both;
+    background-image:linear-gradient(180deg,rgba(5,5,5,0.08) 0%,rgba(5,5,5,0.24) 48%,#050505 100%), url("https://imagedelivery.net/O1Es2ZMHV0HF7g71pX5Prg/1d011d00-e9e8-4d0f-7cd3-35886e138100/public");
+    background-position:52% center; background-size:cover; }
+  .bio-cover-glow { position:absolute; inset:0; background:radial-gradient(circle at 50% 85%,rgba(168,255,0,0.22),transparent 30%); }
+
+  .bio-lang { position:absolute; right:16px; top:16px; z-index:3; display:flex; align-items:center;
+    background:rgba(0,0,0,0.45); padding:3px; border-radius:9999px; border:1px solid rgba(255,255,255,0.08);
+    backdrop-filter:blur(8px); animation:rise .42s var(--ease-out-strong) 80ms both; }
+  .bio-lang .gl { padding:0 4px 0 8px; color:var(--fg3); display:flex; }
+  .bio-lang button { font-family:var(--font-mono); font-weight:700; font-size:10px; padding:4px 8px;
+    border-radius:9999px; border:0; cursor:pointer; background:transparent; color:var(--fg3); }
+  .bio-lang button.on { background:var(--energy-green); color:#0A0A0A; }
+
+  .bio-body { position:relative; margin-top:-70px; padding:0 20px 32px; display:flex; flex-direction:column; align-items:center; }
+  .bio-logo { width:250px; max-width:80%; height:auto; object-fit:contain;
+    filter:drop-shadow(0 0 26px rgba(168,255,0,0.22)); animation:rise .52s var(--ease-out-strong) 80ms both; }
+  .bio-sub { margin:6px 0 22px; text-align:center; font-size:14px; font-weight:500; line-height:1.5;
+    color:var(--fg2); animation:rise .42s var(--ease-out-strong) 130ms both; }
+
+  .bio-socials { display:flex; gap:12px; margin-bottom:22px; }
+  .bio-social { position:relative; width:40px; height:40px; display:inline-flex; align-items:center;
+    justify-content:center; clip-path:var(--clip-micro); cursor:pointer; background:none; border:0;
+    animation:rise .42s var(--ease-out-strong) both; }
+  .bio-social .brd { position:absolute; inset:0; background:rgba(255,255,255,0.08); clip-path:var(--clip-micro); }
+  .bio-social .fil { position:absolute; inset:1px; background:rgba(255,255,255,0.06); clip-path:var(--clip-micro); transition:background .15s; }
+  .bio-social:hover .fil { background:rgba(255,255,255,0.12); }
+
+  .bio-links { width:100%; display:flex; flex-direction:column; gap:12px; }
+  .bio-link { position:relative; width:100%; min-height:54px; display:inline-flex; align-items:center;
+    justify-content:center; clip-path:var(--clip-apex); cursor:pointer; border:0; background:none;
+    animation:rise .42s var(--ease-out-strong) both; transition:transform .12s; }
+  .bio-link:active { transform:scale(0.98); }
+  .bio-link .inr { position:relative; z-index:2; display:inline-flex; align-items:center; gap:11px; }
+  .bio-link .lab { font-family:var(--font-sans); font-weight:900; font-style:italic; text-transform:uppercase;
+    font-size:14px; letter-spacing:0.04em; white-space:nowrap; }
+  .bio-link.primary { background:var(--energy-green); box-shadow:var(--shadow-glow-sm); }
+  .bio-link.primary .inr { color:#0A0A0A; }
+  .bio-link.primary:hover { background:var(--green-hover); }
+  .bio-link.secondary .brd { position:absolute; inset:0; background:var(--energy-green); clip-path:var(--clip-apex); }
+  .bio-link.secondary .fil { position:absolute; inset:2px; background:#161616; clip-path:var(--clip-apex); transition:background .15s; }
+  .bio-link.secondary:hover .fil { background:#202020; }
+  .bio-link.secondary .lab { color:var(--energy-green); }
+  .bio-link.secondary .inr span:first-child { color:var(--energy-green); }
+
+  .bio-foot { margin:30px auto 0; max-width:18rem; text-align:center; font-family:var(--font-mono);
+    font-size:10px; line-height:1.6; letter-spacing:0.16em; text-transform:uppercase; color:rgba(255,255,255,0.35);
+    animation:rise .42s var(--ease-out-strong) 720ms both; }
+  .bio-made { margin-top:22px; display:flex; align-items:center; gap:6px; white-space:nowrap; font-family:var(--font-mono);
+    font-size:10px; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:var(--fg3);
+    text-decoration:none; animation:rise .42s var(--ease-out-strong) 780ms both; }
+  .bio-made span { color:var(--energy-green); }
+
+  @media (prefers-reduced-motion: reduce){ *{ animation:none!important; } }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script type="text/babel" src="Bio.jsx"></script>
+</body>
+</html>
